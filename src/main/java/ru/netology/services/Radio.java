@@ -27,16 +27,23 @@ public class Radio {
         }
 
     }
+    public void prevStation(){
+        if (stationNumber != 0) {
+            stationNumber--;
+        } else {
+            stationNumber = 9;
+        }
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0) {
+        if (currentVolume < 0){
             return;
         }
-        if (currentVolume > 100) {
+        if (currentVolume > 100){
             return;
         }
         this.currentVolume = currentVolume;
