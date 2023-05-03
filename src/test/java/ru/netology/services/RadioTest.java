@@ -133,4 +133,13 @@ public class RadioTest {
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void shouldSetQuantityStation(){
+        Radio service = new Radio(25);
+        service.setStationNumber(15);
+        int expected = 15;
+        int actual = service.getStationNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
 }

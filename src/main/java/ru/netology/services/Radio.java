@@ -2,6 +2,15 @@ package ru.netology.services;
 public class Radio {
     private int stationNumber;
     private int currentVolume;
+    private int maxStation;
+
+    public Radio(int quantityStation){
+        this.maxStation = quantityStation - 1;
+    }
+    public Radio(){
+        this.maxStation = 9;
+
+    }
 
     public int getStationNumber() {
 
@@ -12,7 +21,7 @@ public class Radio {
         if (stationNumber < 0) {
             return;
         }
-        if (stationNumber > 9) {
+        if (stationNumber > maxStation) {
             return;
         }
         this.stationNumber = stationNumber;
@@ -20,7 +29,7 @@ public class Radio {
     }
 
     public void nextStation() {
-        if (stationNumber != 9) {
+        if (stationNumber != maxStation) {
             stationNumber++;
         } else {
             stationNumber = 0;
@@ -31,7 +40,7 @@ public class Radio {
         if (stationNumber != 0) {
             stationNumber--;
         } else {
-            stationNumber = 9;
+            stationNumber = maxStation;
         }
     }
 
