@@ -1,4 +1,5 @@
 package ru.netology.services;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetStation() {
         Radio service = new Radio();
@@ -19,6 +21,7 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetMinStation() {
         Radio service = new Radio();
@@ -27,6 +30,7 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void nextStation() {
         Radio service = new Radio();
@@ -36,6 +40,7 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void nextStationMoreMax() {
         Radio service = new Radio();
@@ -45,6 +50,7 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void prevStation() {
         Radio service = new Radio();
@@ -54,6 +60,7 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void nextStationLessMin() {
         Radio service = new Radio();
@@ -63,14 +70,16 @@ public class RadioTest {
         int actual = service.getStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetSound() {
         Radio service = new Radio();
         service.setCurrentVolume(15);
         int expected = 15;
         int actual = service.getCurrentVolume();
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetSound() {
         Radio service = new Radio();
@@ -79,6 +88,7 @@ public class RadioTest {
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetSoundMax() {
         Radio service = new Radio();
@@ -88,6 +98,7 @@ public class RadioTest {
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotIncreaseSoundMax() {
         Radio service = new Radio();
@@ -98,7 +109,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseVolume(){
+    public void shouldIncreaseVolume() {
         Radio service = new Radio();
         service.setCurrentVolume(50);
         service.increaseVolume();
@@ -106,8 +117,9 @@ public class RadioTest {
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldDecreaseVolume(){
+    public void shouldDecreaseVolume() {
         Radio service = new Radio();
         service.setCurrentVolume(50);
         service.decreaseVolume();
@@ -115,8 +127,9 @@ public class RadioTest {
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldNotSetDecreaseVolume(){
+    public void shouldNotSetDecreaseVolume() {
         Radio service = new Radio();
         service.setCurrentVolume(50);
         service.decreaseVolume();
@@ -124,6 +137,7 @@ public class RadioTest {
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetMinVolume() {
         Radio service = new Radio();
@@ -132,5 +146,15 @@ public class RadioTest {
         int expected = 0;
         int actual = service.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSetQuantityStation() {
+        Radio service = new Radio(25);
+        service.setStationNumber(15);
+        int expected = 15;
+        int actual = service.getStationNumber();
+        Assertions.assertEquals(expected, actual);
+
     }
 }
